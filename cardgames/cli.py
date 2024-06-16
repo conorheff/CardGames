@@ -8,6 +8,7 @@ Be creative! do whatever you want!
 - Import things from your .base module
 """
 
+from .Deck import Deck
 
 def main():  # pragma: no cover
     """
@@ -25,4 +26,7 @@ def main():  # pragma: no cover
         * List all available tasks
         * Run an application (Flask, FastAPI, Django, etc.)
     """
-    print("This will do something")
+    yugi_moto_deck = Deck(duelist='Yugi')
+    yugi_moto_deck.construct_dueling_deck()
+  
+    print(yugi_moto_deck.deck_to_dataframe())

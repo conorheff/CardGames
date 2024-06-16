@@ -1,17 +1,23 @@
 """
 cardgames base module.
 
-This is the principal module of the cardgames project.
-here you put your main classes and objects.
+Main classes and objects will be placed here
 
-Be creative! do whatever you want!
+Main classes
 
-If you want to replace this with a Flask application run:
+    Card (child classes monster, spell, trap)
+    Game (turns, life points)
+    Simulator (simulates a game between two players)
+    Deck (Contains cards)
 
-    $ make init
+Module works by simulating a simple game of classic YuGiOh between two players
 
-and then choose `flask` as template.
+Firstly, a deck is constructed at random for both players (subject to constraints, ie 40 cards etc)
+
+Secondly, a game is constructed where each player makes moves in turn. Game ends when either LP = 0 or card_count = 0
+
+Finally, data about the game is saved to a db
+
 """
 
-# example constant variable
-NAME = "cardgames"
+
