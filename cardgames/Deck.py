@@ -12,11 +12,10 @@
 import numpy as np
 import random
 import pandas as pd
-from .Card import MonsterCard, SpellCard, TrapCard
+from .card import MonsterCard, SpellCard, TrapCard
 
 class Deck:
-    def __init__(self, duelist, card_count=40, monster_count=20, spell_count=10, trap_count=10):
-        self.duelist = duelist
+    def __init__(self, card_count=40, monster_count=20, spell_count=10, trap_count=10):
         self.card_count = card_count
         self.monster_count = monster_count
         self.spell_count = spell_count
@@ -28,9 +27,6 @@ class Deck:
 
         if monster_count+spell_count+trap_count != card_count :
             raise Exception("Deck size must equal number of cards!")
-        
-    def __str__(self):
-        return f"This is {self.duelist}'s Deck"
 
     def construct_dueling_deck(self):
         max_atk = 3000
